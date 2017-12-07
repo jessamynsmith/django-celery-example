@@ -8,9 +8,20 @@
 
   <title>{% block title %}{% endblock %}</title>
 
+  <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css" media="screen">
+
   {% block extra_head %}{% endblock %}
 </head>
 <body>
+
+<div class="nav">
+    {% if not user.is_anonymous %}
+        <h3 class="float-left">Welcome, {{ user }}</h3>
+        <div class="float-right"><a href="{% url 'account_logout' %}"><span>Log out</span></a></div>
+    {% else %}
+        <div class="float-right"><a href="{% url 'account_login' %}"><span>Log in</span></a></div>
+    {% endif %}
+</div>
 
 <div>
   {% block content %}{% endblock %}

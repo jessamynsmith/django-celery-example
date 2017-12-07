@@ -1,0 +1,13 @@
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.nav:after {
+    content: '';
+    display: block;
+    clear: both;
+}
