@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.views.generic import CreateView
 
-# Create your views here.
+from tweets import models as tweet_models
+
+
+class TweetCreateView(CreateView):
+
+    model = tweet_models.Tweet
+    fields = "__all__"
