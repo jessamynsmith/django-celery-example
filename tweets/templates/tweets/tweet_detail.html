@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Tweet Details{% endblock %}
+
+{% block content %}
+    <div>{{ object }}</div>
+
+    <br>
+
+    <div><a href="{% url 'tweet_create' %}">Post a new tweet</a></div>
+{% endblock %}

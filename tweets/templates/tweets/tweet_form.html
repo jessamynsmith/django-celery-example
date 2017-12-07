@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}Add Tweet{% endblock %}
+{% block title %}Create Tweet{% endblock %}
 
 {% block content %}
-    <form>
+    <form method="post" action="">
+        {% csrf_token %}
         {{ form.as_p }}
+        <input type="submit" value="Post tweet">
     </form>
 {% endblock %}
