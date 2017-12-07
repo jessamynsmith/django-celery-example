@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, DetailView
 
+from tweets.tasks import post_tweet
 from tweets import models as tweet_models
 
 
@@ -14,6 +15,7 @@ class TweetCreateView(LoginRequiredMixin, CreateView):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()
+        post_tweet.delay(self.object.id)
         return super().form_valid(form)
 
 

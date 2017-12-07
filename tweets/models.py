@@ -11,10 +11,8 @@ class Tweet(models.Model):
 
     def __str__(self):
         dates = "{}".format(self.saved_at)
-        print(dates)
         if self.posted_at:
             dates = "{}, {}".format(dates, self.posted_at)
-            print(dates)
         return "{} ({})".format(self.status, dates)
 
     def get_absolute_url(self):
