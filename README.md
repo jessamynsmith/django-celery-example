@@ -1,7 +1,7 @@
 # Django Celery Example
 
-The egg timer is an open-source tracker for menstrual periods. It provides a calendar, email notifications, statistical analysis, and an API allowing you to download all your data. Check out the live app:
-https://eggtimer.herokuapp.com/
+Django sample app that uses celery to queue tweets for posting to twitter.
+https://django-celery-example.herokuapp.com
 
 
 Like my work? Tip me! https://www.paypal.me/jessamynsmith
