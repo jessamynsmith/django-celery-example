@@ -152,3 +152,6 @@ STATICFILES_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(BASE_DIR, 'django_celery_example', 'static'),
 )
+
+
+CELERY_BROKER_URL=os.environ.get('RABBITMQ_BIGWIG_URL')
