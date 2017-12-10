@@ -4,11 +4,14 @@ celery==4.1.0
 certifi==2017.11.5
 chardet==3.0.4
 defusedxml==0.5.0
+dj-database-url==0.4.2
 Django==2.0
 django-allauth==0.34.0
+gunicorn==19.7.1
 idna==2.6
 kombu==4.1.0
 oauthlib==2.0.6
+psycopg2==2.7.3.2
 python3-openid==3.1.0
 pytz==2017.3
 requests==2.18.4
