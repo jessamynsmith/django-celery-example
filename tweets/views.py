@@ -15,7 +15,10 @@ class TweetCreateView(LoginRequiredMixin, CreateView):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()
-        post_tweet.delay(self.object.id)
+
+        access_token = self.request.session['oauth_api.twitter.com_access_token']
+        post_tweet.delay(self.request.user.id, access_token, self.object.id)
+
         return super().form_valid(form)
 
 
