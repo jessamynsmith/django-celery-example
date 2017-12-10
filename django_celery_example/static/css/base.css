@@ -11,3 +11,5 @@
     display: block;
     clear: both;
 }
+
+label { display: block; }
