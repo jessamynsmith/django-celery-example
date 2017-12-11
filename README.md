@@ -77,3 +77,5 @@ Make a new Heroku app, and add the following addons:
 
     Heroku Postgres
 	RabbitMQ Bigwig
+	
+Ensure the worker process is running from the Heroku dashboard for your app -> Resources -> dynos
