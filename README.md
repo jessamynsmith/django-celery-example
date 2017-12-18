@@ -77,5 +77,6 @@ Make a new Heroku app, and add the following addons:
 
     Heroku Postgres
 	RabbitMQ Bigwig
+	SendGrid  # optional, if you want to receive error emails
 	
 Ensure the worker process is running from the Heroku dashboard for your app -> Resources -> dynos
