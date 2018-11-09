@@ -154,7 +154,7 @@ STATICFILES_DIRS = (
 )
 
 
-CELERY_BROKER_URL = os.environ.get('RABBITMQ_BIGWIG_URL')
+CELERY_BROKER_URL = os.environ.get('CLOUDAMQP_URL')
 
 
 ADMINS = (
