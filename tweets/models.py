@@ -18,3 +18,13 @@ class Tweet(models.Model):
 
     def get_absolute_url(self):
         return reverse('tweet_detail', args=[str(self.id)])
+
+
+class RecentTweetCount(models.Model):
+    since_id = models.BigIntegerField()
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    saved_at = models.DateTimeField(auto_now_add=True)
+    count = models.IntegerField()
+
+    def __str__(self):
+        return "{} posted {} times since {}".format(self.count, self.user, self.since_id)

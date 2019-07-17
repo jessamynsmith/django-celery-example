@@ -60,6 +60,7 @@ Check code style:
 Run celery:
 
     celery -A django_celery_example worker -l info  # Handles celery tasks
+    celery -A django_celery_example beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
 
 Run server:
 
@@ -68,6 +69,8 @@ Run server:
 Or run using gunicorn:
 
     gunicorn django_celery_example.wsgi
+    
+Note: If you want to add a beat task, you must do so in the Django admin.
 
 ### Continuous Integration and Deployment
 
