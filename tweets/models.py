@@ -27,4 +27,4 @@ class RecentTweetCount(models.Model):
     count = models.IntegerField()
 
     def __str__(self):
-        return "{} posted {} times since {}".format(self.count, self.user, self.since_id)
+        return "{} posted {} times since {}".format(self.user, self.count, self.since_id)
