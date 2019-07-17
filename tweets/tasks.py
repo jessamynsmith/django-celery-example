@@ -19,9 +19,10 @@ def post_tweet(user_id, access_token, tweet_id):
                      token.app.client_id, token.app.secret)
         twitter = Twitter(auth=auth)
 
-        twitter.statuses.update(status=tweet.status)
+        result = twitter.statuses.update(status=tweet.status)
 
         tweet.posted_at = now()
+        tweet.twitter_id = result['id']
         tweet.save()
         return True
 
