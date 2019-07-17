@@ -59,8 +59,7 @@ Check code style:
     
 Run celery:
 
-    celery -A django_celery_example worker -l info  # Handles celery tasks
-    celery -A django_celery_example beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
+    celery -A django_celery_example worker -l info -B --scheduler django_celery_beat.schedulers:DatabaseScheduler  # Handles celery tasks
 
 Run server:
 
